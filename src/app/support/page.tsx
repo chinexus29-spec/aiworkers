@@ -1,4 +1,6 @@
 import BackButton from "@/components/BackButton";
+import AuthGuard from "@/components/AuthGuard";
+
 import {
   MessageCircle,
 } from "lucide-react";
