@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+
+  fullName    String
+  phoneNumber String @unique
+  pin         String
+
+  walletBalance    Float        @default(0)
+  totalEarnings    Float        @default(0)
+  referralEarnings Float        @default(0)
+  withdrawals      Withdrawal[]
+
+  referralCode  String @unique
+  referralCount Int    @default(0)
+
+  role Role @default(USER)
+
+  suspended Boolean @default(false)
+
+  referredById String?
+  referredBy   User?   @relation("Referrals", fields: [referredById], references: [id])
+
+  referrals             User[]    @relation("Referrals")
+  deposits              Deposit[]
+  firstDepositBonusPaid Boolean   @default(false)
+
+  createdAt DateTime @default(now())
+
+  transactions Transaction[]
+
+  bankName      String?
+  accountNumber String?
+  accountName   String?
+
+  walletAddress String?
+  walletNetwork String?
+}
+
+model Transaction {
+  id String @id @default(cuid())
+
+  amount Float
+
+  type TransactionType
+
+  status TransactionStatus
+
+  description String?
+
+  bankName      String?
+  accountName   String?
+  accountNumber String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAWAL
+  REFERRAL_BONUS
+  ADMIN_CREDIT
+  ADMIN_DEBIT
+  SIGNUP_BONUS
+}
+
+enum TransactionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Deposit {
+  id String @id @default(cuid())
+
+  amount Float
+
+  status TransactionStatus @default(PENDING)
+
+  proof String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Withdrawal {
+  id String @id @default(cuid())
+
+  amount Float
+
+  fee Float
+
+  amountToReceive Float
+
+  method String
+
+  status TransactionStatus @default(PENDING)
+
+  userId String
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
