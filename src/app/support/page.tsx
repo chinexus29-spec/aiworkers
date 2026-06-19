@@ -7,7 +7,7 @@ import {
 
 export default function SupportPage() {
   return (
-    
+    <AuthGuard>
     <main className="page-padding space-y-4">
       <BackButton />
       <h1 className="text-2xl font-bold">
@@ -26,5 +26,6 @@ export default function SupportPage() {
         </button>
       </div>
     </main>
+    </AuthGuard>
   );
 }
