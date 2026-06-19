@@ -1,175 +1,174 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 
 export default function RegisterPage() {
+const router = useRouter();
 
-  const searchParams =
-  useSearchParams();
+const [fullName, setFullName] =
+useState("");
 
-  const router = useRouter();
+const [phoneNumber, setPhoneNumber] =
+useState("");
 
-  const [fullName, setFullName] =
-    useState("");
+const [referralCode, setReferralCode] =
+useState("");
 
-  const [phoneNumber, setPhoneNumber] =
-    useState("");
+const [pin, setPin] =
+useState("");
 
-  const [referralCode, setReferralCode] =
-    useState("");
+const [loading, setLoading] =
+useState(false);
 
-  const [pin, setPin] =
-    useState("");
+useEffect(() => {
+const params =
+new URLSearchParams(
+window.location.search
+);
 
-  const [loading, setLoading] =
-    useState(false);
 
-  useEffect(() => {
-  const ref =
-    searchParams.get("ref");
+const ref =
+  params.get("ref");
 
-  if (ref) {
-    setReferralCode(ref);
-  }
-}, [searchParams]);
-
-  async function handleRegister() {
-
-    if (!/^\d{11}$/.test(phoneNumber)) {
-  alert(
-    "Phone number must be exactly 11 digits"
-  );
-  return;
+if (ref) {
+  setReferralCode(ref);
 }
 
-    try {
-      setLoading(true);
+}, []);
 
-      const response =
-        await fetch("/api/register", {
-          method: "POST",
+async function handleRegister() {
+if (!/^\d{11}$/.test(phoneNumber)) {
+alert(
+"Phone number must be exactly 11 digits"
+);
+return;
+}
 
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
+try {
+  setLoading(true);
 
-          body: JSON.stringify({
-            fullName,
-            phoneNumber,
-            pin,
-            referralCode,
-          }),
-        });
+  const response =
+    await fetch("/api/register", {
+      method: "POST",
 
-      const data =
-        await response.json();
+      headers: {
+        "Content-Type":
+          "application/json",
+      },
 
-      if (!response.ok) {
-        alert(data.message);
-        return;
-      }
+      body: JSON.stringify({
+        fullName,
+        phoneNumber,
+        pin,
+        referralCode,
+      }),
+    });
 
-      alert(
-        "Registration successful"
-      );
+  const data =
+    await response.json();
 
-      router.push("/login");
-    } catch (error) {
-      console.error(error);
-
-      alert(
-        "Something went wrong"
-      );
-    } finally {
-      setLoading(false);
-    }
+  if (!response.ok) {
+    alert(data.message);
+    return;
   }
 
-  return (
-    <main className="page-padding min-h-screen flex items-center">
-      <div className="card w-full space-y-4">
-        <h1 className="text-2xl font-bold text-center">
-          Create Account
-        </h1>
-
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={fullName}
-          onChange={(e) =>
-            setFullName(
-              e.target.value
-            )
-          }
-          className="w-full border rounded-xl p-3"
-        />
-
-        <input
-  type="tel"
-  placeholder="Phone Number "
-  value={phoneNumber}
-  onChange={(e) => {
-    const value = e.target.value
-      .replace(/\D/g, "")
-      .slice(0, 11);
-
-    setPhoneNumber(value);
-  }}
-  className="w-full border rounded-xl p-3"
-/>
-
-        <input
-          type="text"
-          placeholder="Referral Code (Optional)"
-          value={referralCode}
-          onChange={(e) =>
-            setReferralCode(
-              e.target.value.toUpperCase()
-            )
-          }
-          className="w-full border rounded-xl p-3"
-        />
-
-        <input
-          type="password"
-          placeholder="PIN"
-          value={pin}
-          onChange={(e) =>
-            setPin(
-              e.target.value
-            )
-          }
-          className="w-full border rounded-xl p-3"
-        />
-
-        <button
-          onClick={handleRegister}
-          disabled={loading}
-          className="cyan-btn w-full"
-        >
-          {loading
-            ? "Creating Account..."
-            : "Register"}
-        </button>
-
-        <div className="text-center">
-          <p className="text-sm text-gray-600">
-            Already have an account?
-          </p>
-
-          <Link
-            href="/login"
-            className="text-blue-500 font-semibold"
-          >
-            Login Here
-          </Link>
-        </div>
-      </div>
-    </main>
+  alert(
+    "Registration successful"
   );
+
+  router.push("/login");
+} catch (error) {
+  console.error(error);
+
+  alert(
+    "Something went wrong"
+  );
+} finally {
+  setLoading(false);
+}
+
+
+}
+
+return ( <main className="page-padding min-h-screen flex items-center"> <div className="card w-full space-y-4"> <h1 className="text-2xl font-bold text-center">
+Create Account </h1>
+
+    <input
+      type="text"
+      placeholder="Full Name"
+      value={fullName}
+      onChange={(e) =>
+        setFullName(
+          e.target.value
+        )
+      }
+      className="w-full border rounded-xl p-3"
+    />
+
+    <input
+      type="tel"
+      placeholder="Phone Number"
+      value={phoneNumber}
+      onChange={(e) => {
+        const value =
+          e.target.value
+            .replace(/\D/g, "")
+            .slice(0, 11);
+
+        setPhoneNumber(value);
+      }}
+      className="w-full border rounded-xl p-3"
+    />
+
+    <input
+      type="text"
+      placeholder="Referral Code (Optional)"
+      value={referralCode}
+      onChange={(e) =>
+        setReferralCode(
+          e.target.value.toUpperCase()
+        )
+      }
+      className="w-full border rounded-xl p-3"
+    />
+
+    <input
+      type="password"
+      placeholder="PIN"
+      value={pin}
+      onChange={(e) =>
+        setPin(
+          e.target.value
+        )
+      }
+      className="w-full border rounded-xl p-3"
+    />
+
+    <button
+      onClick={handleRegister}
+      disabled={loading}
+      className="cyan-btn w-full"
+    >
+      {loading
+        ? "Creating Account..."
+        : "Register"}
+    </button>
+
+    <div className="text-center">
+      <p className="text-sm text-gray-600">
+        Already have an account?
+      </p>
+
+      <Link
+        href="/login"
+        className="text-blue-500 font-semibold"
+      >
+        Login Here
+      </Link>
+    </div>
+  </div>
+</main>
+);
 }
