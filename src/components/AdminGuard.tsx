@@ -10,7 +10,7 @@ import {
 } from "next/navigation";
 
 const ADMIN_PHONES = [
-  "safari",
+  "11111111111",
   "destiny",
 ];
 
