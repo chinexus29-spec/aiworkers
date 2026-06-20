@@ -11,7 +11,7 @@ import {
 
 const ADMIN_PHONES = [
   "11111111111",
-  "destiny",
+  "22222222222",
 ];
 
 export default function AdminGuard({
