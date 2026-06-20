@@ -87,12 +87,15 @@ try {
   );
 } finally {
   setLoading(false);
-
-
+}
 }
 
-return ( <main className="page-padding min-h-screen flex items-center"> <div className="card w-full space-y-4"> <h1 className="text-2xl font-bold text-center">
-Create Account </h1>
+return (
+  <main className="page-padding min-h-screen flex items-center">
+    <div className="card w-full space-y-4">
+      <h1 className="text-2xl font-bold text-center">
+        Create Account
+      </h1>
 
     <input
       type="text"
@@ -170,4 +173,5 @@ Create Account </h1>
   </div>
 </main>
 );
+
 }

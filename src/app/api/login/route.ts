@@ -57,13 +57,14 @@ export async function POST(req: Request) {
       referralCode:
         user.referralCode,
     });
-  } catch {
-    return NextResponse.json(
-      {
-        message:
-          "Login failed",
-      },
-      { status: 500 }
-    );
-  }
+  }  catch (error) {
+  console.error("LOGIN ERROR:", error);
+
+  return NextResponse.json(
+    {
+      message: String(error),
+    },
+    { status: 500 }
+  );
+}
 }
