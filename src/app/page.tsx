@@ -92,9 +92,9 @@ useEffect(() => {
 
 {(
   user?.phoneNumber ===
-    "destiny" ||
+    "11111111111" ||
   user?.phoneNumber ===
-    "safarifx"
+    "22222222222"
 ) && (
   <a
     href="/admin"
