@@ -87,7 +87,6 @@ try {
   );
 } finally {
   setLoading(false);
-}
 
 
 }
@@ -109,7 +108,7 @@ Create Account </h1>
 
     <input
       type="tel"
-      placeholder="Phone Number"
+      placeholder="Phone Number.."
       value={phoneNumber}
       onChange={(e) => {
         const value =
