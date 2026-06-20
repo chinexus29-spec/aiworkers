@@ -71,7 +71,7 @@ export default function UsdtDepositPage() {
     }
 
     alert(
-      "Deposit submitted. Awaiting admin approval."
+      "Deposit submitted. Awaiting Confirmation"
     );
 
     setAmount("");
