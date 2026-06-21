@@ -3,6 +3,9 @@
 import AuthGuard from "@/components/AuthGuard";
 import { useEffect, useState } from "react";
 
+const [workerBots, setWorkerBots] =
+useState(0);
+
 const products = [
 {
 id: 1,
@@ -78,6 +81,7 @@ useState<any>(null);
 const [purchasedPlans, setPurchasedPlans] =
 useState<string[]>([]);
 
+
 useEffect(() => {
 async function loadPlans() {
 const user = JSON.parse(
@@ -98,6 +102,9 @@ localStorage.getItem("user") || "{}"
       (plan: any) => plan.planName
     )
   );
+
+  setWorkerBots(data.length);
+
 }
 
 loadPlans();
@@ -107,6 +114,12 @@ loadPlans();
 
 return ( <AuthGuard> <main className="page-padding space-y-5"> <h1 className="text-2xl font-bold">
 AI Investment Products </h1>
+
+<div className="bg-[#111827] border border-slate-800 rounded-2xl p-4">
+  <p className="text-lg font-semibold text-white">
+    Worker Bots: {workerBots}
+  </p>
+</div>
 
 
     {products.map((product) => (
