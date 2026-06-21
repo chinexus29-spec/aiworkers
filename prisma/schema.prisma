@@ -40,6 +40,8 @@ model User {
   bankName      String?
   accountNumber String?
   accountName   String?
+  purchasedPlans PurchasedPlan[]
+
 
   walletAddress String?
   walletNetwork String?
@@ -119,4 +121,23 @@ model Withdrawal {
   user User @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
+}
+
+model PurchasedPlan {
+  id              String   @id @default(cuid())
+
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+
+  planName        String
+  purchasePrice   Float
+  dailyIncome     Float
+
+  purchasedAt     DateTime @default(now())
+  lastClaimedAt   DateTime?
+  expiresAt       DateTime
+
+  active          Boolean  @default(true)
+
+  createdAt       DateTime @default(now())
 }
