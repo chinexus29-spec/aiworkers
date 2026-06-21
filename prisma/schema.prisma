@@ -10,6 +10,7 @@ datasource db {
 model User {
   id String @id @default(cuid())
 
+  supportTickets SupportTicket[]
   fullName    String
   phoneNumber String @unique
   pin         String
@@ -140,4 +141,17 @@ model PurchasedPlan {
   active          Boolean  @default(true)
 
   createdAt       DateTime @default(now())
+}
+
+model SupportTicket {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  subject   String
+  message   String
+  status    String   @default("OPEN")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

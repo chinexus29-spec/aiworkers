@@ -15,8 +15,8 @@ export default function Header() {
       <span className="w-2 h-2 rounded-full bg-green-500"></span>
 
       <div className="leading-tight">
-        <p className="text-[10px] text-gray-400 uppercase">
-          Location
+        <p className="text-[7px] text-gray-400 uppercase">
+          Your Location
         </p>
 
         <p className="text-blue-500 text-sm font-semibold">
