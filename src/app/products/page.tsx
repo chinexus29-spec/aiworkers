@@ -3,8 +3,6 @@
 import AuthGuard from "@/components/AuthGuard";
 import { useEffect, useState } from "react";
 
-const [workerBots, setWorkerBots] =
-useState(0);
 
 const products = [
 {
@@ -80,6 +78,9 @@ useState<any>(null);
 
 const [purchasedPlans, setPurchasedPlans] =
 useState<string[]>([]);
+
+const [workerBots, setWorkerBots] =
+useState(0);
 
 
 useEffect(() => {
