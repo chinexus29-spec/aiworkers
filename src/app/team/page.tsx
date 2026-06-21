@@ -161,7 +161,7 @@ export default function TeamPage() {
           </li>
 
           <li>
-            • You earn 30% of your
+            • You earn  20% of your
             referral's first approved
             deposit.
           </li>

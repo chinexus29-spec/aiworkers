@@ -126,7 +126,7 @@ export async function POST(
         .firstDepositBonusPaid
     ) {
       const commission =
-        nairaAmount * 0.3;
+        nairaAmount * 0.2;
 
       await prisma.user.update({
         where: {
@@ -169,7 +169,7 @@ export async function POST(
             TransactionStatus.APPROVED,
 
           description:
-            "30% first deposit referral bonus",
+            " 20% first deposit referral bonus",
         },
       });
 

@@ -6,8 +6,8 @@ const products = [
     id: 1,
     name: "AI Content Creation",
     image: "/products/content.jpg",
-    price: "$3",
-    income: "$0.30",
+    price: "$10",
+    income: "$0.70",
     duration: "30 Days",
     description:
       "AI Content Creation generates articles, social media posts, marketing copy and digital content using advanced artificial intelligence systems.",
@@ -17,8 +17,8 @@ const products = [
     id: 2,
     name: "AI Chatbots",
     image: "/products/chatbot.jpg",
-    price: "$10",
-    income: "$1.20",
+    price: "$23",
+    income: "$2",
     duration: "30 Days",
     description:
       "AI Chatbots provide automated customer support and intelligent communication to improve customer engagement and business efficiency.",
@@ -28,7 +28,7 @@ const products = [
     id: 3,
     name: "AI-Powered Education & Tutoring",
     image: "/products/education.jpg",
-    price: "$30",
+    price: "$41",
     income: "$3.80",
     duration: "30 Days",
     description:
@@ -39,8 +39,8 @@ const products = [
     id: 4,
     name: "AI Marketing Automation",
     image: "/products/marketing.jpg",
-    price: "$100",
-    income: "$13",
+    price: "$90",
+    income: "$10",
     duration: "30 Days",
     description:
       "AI Marketing Automation analyzes customer behavior, optimizes campaigns and automates digital marketing workflows.",
@@ -50,8 +50,8 @@ const products = [
     id: 5,
     name: "AI Cybersecurity Solutions",
     image: "/products/cybersecurity.jpg",
-    price: "$300",
-    income: "$42",
+    price: "$160",
+    income: "$18.5",
     duration: "30 Days",
     description:
       "AI Cybersecurity Solutions detect threats, monitor suspicious activities and strengthen digital security infrastructures.",
@@ -61,8 +61,8 @@ const products = [
     id: 6,
     name: "AI Robotics & Industrial Automation",
     image: "/products/robotics.jpg",
-    price: "$1000",
-    income: "$150",
+    price: "$340",
+    income: "$40",
     duration: "30 Days",
     description:
       "AI Robotics and Industrial Automation improve manufacturing efficiency through intelligent machines and automated processes.",
