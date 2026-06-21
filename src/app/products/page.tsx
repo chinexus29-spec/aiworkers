@@ -191,7 +191,7 @@ AI Investment Products </h1>
 
     {selectedProduct && (
       <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-        <div className="bg-white border border-slate-700 rounded-2xl p-6 w-full max-w-md">
+        <div className="bg-white border border-slate-700 rounded-2xl p-6 w-[90%] max-w-lg">
 
           <h2 className="text-xl font-bold mb-4">
             Confirm Purchase
@@ -227,7 +227,7 @@ AI Investment Products </h1>
               onClick={() =>
                 setSelectedProduct(null)
               }
-              className="flex-1 bg-gray-600 py-3 rounded-xl"
+              className="flex-1 bg-gray-600 text-blue-500 font-semibold py-3 rounded-xl"
             >
               Cancel
             </button>
@@ -273,7 +273,7 @@ AI Investment Products </h1>
 
                 setSelectedProduct(null);
               }}
-              className="flex-1 bg-blue-600 py-3 rounded-xl"
+              className="flex-1 bg-blue-600 text-white font-semibold py-3 rounded-xl"
             >
               Confirm
             </button>
