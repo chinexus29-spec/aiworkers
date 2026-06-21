@@ -19,6 +19,10 @@ export default function AdminDashboard() {
       title: "Transactions",
       href: "/admin/transactions",
     },
+    {
+      title: "Tickets",
+      href: "/admin/tickets",
+  },
   ];
 
   return (
