@@ -50,7 +50,7 @@ return ( <AuthGuard> <main className="page-padding space-y-5">
       <a
         href={`https://wa.me/${whatsappNumber}?text=${message}`}
         target="_blank"
-        className="cyan-btn w-full block text-center"
+        className= "w-full py-3 rounded-xl font-semibold transition bg-blue-600 hover:bg-blue-700 text-white"
       >
         Contact Customer Service
       </a>
