@@ -3,7 +3,6 @@
 import AuthGuard from "@/components/AuthGuard";
 import { useEffect, useState } from "react";
 
-
 const products = [
 {
 id: 1,
@@ -82,6 +81,8 @@ useState<string[]>([]);
 const [workerBots, setWorkerBots] =
 useState(0);
 
+const [totalIncome, setTotalIncome] =
+useState(0);
 
 useEffect(() => {
 async function loadPlans() {
@@ -106,6 +107,15 @@ localStorage.getItem("user") || "{}"
 
   setWorkerBots(data.length);
 
+  const income = data.reduce(
+    (
+      sum: number,
+      plan: any
+    ) => sum + plan.dailyIncome,
+    0
+  );
+
+  setTotalIncome(income);
 }
 
 loadPlans();
@@ -113,21 +123,45 @@ loadPlans();
 
 }, []);
 
-return ( <AuthGuard> <main className="page-padding space-y-5"> <h1 className="text-2xl font-bold">
-AI Investment Products </h1>
+return ( <AuthGuard> <main className="page-padding space-y-5">
 
-<div className="bg-[#111827] border border-slate-800 rounded-2xl p-4">
-  <p className="text-lg font-semibold text-white">
-    Worker Bots: {workerBots}
-  </p>
-</div>
 
+    <h1 className="text-2xl font-bold">
+      AI Investment Products
+    </h1>
+
+    <div className="bg-[#111827] border border-slate-800 rounded-2xl p-4">
+      <div className="flex justify-between items-center">
+
+        <div>
+          <p className="text-sm text-gray-400">
+            Worker Bots
+          </p>
+
+          <p className="text-2xl font-bold text-white">
+            {workerBots}
+          </p>
+        </div>
+
+        <div className="text-right">
+          <p className="text-sm text-gray-400">
+            Total Daily Income
+          </p>
+
+          <p className="text-2xl font-bold text-green-500">
+            ${totalIncome.toFixed(2)}
+          </p>
+        </div>
+
+      </div>
+    </div>
 
     {products.map((product) => (
       <div
         key={product.id}
         className="overflow-hidden rounded-2xl bg-[#111827] border border-slate-800"
       >
+
         <div
           className="h-44 bg-cover bg-center relative"
           style={{
@@ -142,7 +176,9 @@ AI Investment Products </h1>
         </div>
 
         <div className="p-4">
+
           <div className="grid grid-cols-3 gap-3 mb-4">
+
             <div>
               <p className="text-gray-400 text-sm">
                 Price
@@ -172,6 +208,7 @@ AI Investment Products </h1>
                 {product.duration}
               </p>
             </div>
+
           </div>
 
           <p className="text-sm text-gray-400 leading-6 mb-5">
@@ -199,12 +236,14 @@ AI Investment Products </h1>
               ? "Already Purchased"
               : "Purchase Plan"}
           </button>
+
         </div>
       </div>
     ))}
 
     {selectedProduct && (
       <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+
         <div className="bg-white border border-slate-700 rounded-2xl p-6 w-[90%] max-w-lg">
 
           <h2 className="text-xl font-bold mb-4">
@@ -220,6 +259,7 @@ AI Investment Products </h1>
           </p>
 
           <div className="space-y-2 mb-6">
+
             <p>
               <strong>Price:</strong>{" "}
               {selectedProduct.price}
@@ -234,14 +274,16 @@ AI Investment Products </h1>
               <strong>Duration:</strong>{" "}
               {selectedProduct.duration}
             </p>
+
           </div>
 
           <div className="flex gap-3">
+
             <button
               onClick={() =>
                 setSelectedProduct(null)
               }
-              className="flex-1 bg-gray-600 text-blue-500 font-semibold py-3 rounded-xl"
+              className="flex-1 bg-gray-600 hover:bg-gray-700 text-blue-500 font-semibold py-3 rounded-xl transition"
             >
               Cancel
             </button>
@@ -283,18 +325,36 @@ AI Investment Products </h1>
                     ...purchasedPlans,
                     selectedProduct.name,
                   ]);
+
+                  setWorkerBots(
+                    workerBots + 1
+                  );
+
+                  setTotalIncome(
+                    totalIncome +
+                      parseFloat(
+                        selectedProduct.income.replace(
+                          "$",
+                          ""
+                        )
+                      )
+                  );
                 }
 
                 setSelectedProduct(null);
               }}
-              className="flex-1 bg-blue-600 text-white font-semibold py-3 rounded-xl"
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
             >
               Confirm
             </button>
+
           </div>
+
         </div>
+
       </div>
     )}
+
   </main>
 </AuthGuard>
 
