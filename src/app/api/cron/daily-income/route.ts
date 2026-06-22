@@ -60,12 +60,12 @@ for (const plan of plans) {
       data: {
         walletBalance: {
           increment:
-            plan.dailyIncome,
+            plan.dailyIncome * 1350,
         },
 
         totalEarnings: {
           increment:
-            plan.dailyIncome,
+            plan.dailyIncome * 1350 ,
         },
       },
     });
