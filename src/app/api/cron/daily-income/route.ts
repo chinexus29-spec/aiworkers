@@ -77,11 +77,11 @@ for (const plan of plans) {
         userId: plan.userId,
 
         amount:
-          plan.dailyIncome*1350,
+          plan.dailyIncome,
 
         type:
           TransactionType.DAILY_EARNING,
-
+        
         status:
           TransactionStatus.APPROVED,
 
