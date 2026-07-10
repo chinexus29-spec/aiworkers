@@ -13,7 +13,7 @@ export default function UsdtDepositPage() {
     useState("");
 
   const walletAddress =
-    "PASTE_YOUR_TRC20_ADDRESS_HERE";
+    "TRNdq3wRXWJw9YUXqM2mBvvewoZ21SamEM";
 
   async function submitDeposit() {
     const savedUser =
