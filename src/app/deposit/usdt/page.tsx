@@ -154,11 +154,12 @@ export default function UsdtDepositPage() {
       </div>
 
       <div className="card">
-        <p className="text-sm text-gray-400">
-          Send USDT using
-          TRC20 network,
-          then click below
-          after payment.
+         <p className="text-sm text-gray-400 leading-6">
+  Transfer <span className="font-semibold text-white">${amount}</span> via the{" "}
+  <span className="font-semibold text-blue-500">
+    Tron (TRC20)
+  </span>{" "}
+  network. After completing your payment, click the button below to submit your deposit for review.
         </p>
 
         <button
