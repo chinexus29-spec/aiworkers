@@ -4,6 +4,8 @@ import {
   TransactionType,
 } from "@prisma/client";
 
+const USD_RATE = 1350;
+
 import { prisma } from "@/lib/prisma";
 
 export async function POST(
@@ -68,7 +70,7 @@ export async function POST(
           withdrawal.userId,
 
         amount:
-          withdrawal.amount,
+          withdrawal.amount/USD_RATE,
 
         type:
           TransactionType.WITHDRAWAL,

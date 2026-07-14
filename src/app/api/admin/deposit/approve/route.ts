@@ -160,7 +160,7 @@ export async function POST(
               .referredBy.id,
 
           amount:
-            commission,
+            commission/USD_RATE,
 
           type:
             TransactionType.REFERRAL_BONUS,

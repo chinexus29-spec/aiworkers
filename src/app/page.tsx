@@ -74,8 +74,7 @@ useEffect(() => {
   </h2>
 
         <p className="mt-2 text-sm">
-          Earn daily income by purchasing
-          VIP AI Worker plans.
+          Build your portfolio of AI worker bots, earn daily rewards, and manage your investments with confidence—all from one place.
         </p>
       </section>
 
@@ -161,14 +160,11 @@ useEffect(() => {
         </h3>
 
         <p className="text-sm text-gray-300 leading-6">
-          AI Workers is a modern
-          investment platform designed
-          to help members earn daily
-          income through VIP plans.
-          Purchase a VIP package and
-          receive daily returns
-          throughout the duration of
-          the plan.
+   🎉 We’re excited to announce that the AI Workers community has now grown to over 2,000 registered members!
+
+Thank you for being part of our journey. Your trust and support continue to inspire us as we improve the platform and introduce new opportunities. We remain committed to providing a reliable experience, timely support, and steady platform improvements for every member.
+
+Thank you for growing with us.
         </p>
       </section>
 
@@ -180,10 +176,11 @@ useEffect(() => {
         </h3>
 
         <p className="text-sm text-gray-300">
-          Welcome to AI Workers.
-          Deposits and withdrawals are
-          processed by the finance
-          department daily.
+          AI Workers is an AI-powered digital earning platform that gives members access to virtual AI worker bots designed to generate daily returns throughout their active plan period.
+
+Our goal is to make digital earning simple, transparent, and accessible by combining AI-themed investment products with a secure, easy-to-use platform. Members can purchase AI worker plans, track earnings, grow their network through referrals, and manage their accounts from a single dashboard.
+
+We continue to improve our services by introducing new AI worker categories, strengthening platform security, and providing responsive customer support to ensure the best possible experience for our community.
         </p>
       </section>
     </main>
