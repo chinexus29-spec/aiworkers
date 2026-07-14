@@ -77,7 +77,7 @@ export default function TransactionsPage() {
 
                 <div className="text-right">
                   <p className="text-blue-500 font-bold">
-                    ₦
+                    $
                     {transaction.amount.toLocaleString()}
                   </p>
 

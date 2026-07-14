@@ -5,6 +5,8 @@ TransactionStatus,
 TransactionType,
 } from "@prisma/client";
 
+const USD_RATE = 1350;
+
 export async function GET() {
 try {
 const now = new Date();
@@ -60,12 +62,12 @@ for (const plan of plans) {
       data: {
         walletBalance: {
           increment:
-            plan.dailyIncome * 1350,
+            plan.dailyIncome * USD_RATE,
         },
 
         totalEarnings: {
           increment:
-            plan.dailyIncome * 1350 ,
+            plan.dailyIncome * USD_RATE ,
         },
       },
     });

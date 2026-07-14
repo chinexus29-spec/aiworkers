@@ -122,7 +122,7 @@ export default function AdminDepositsPage() {
                   <p className="text-sm text-gray-400">
                     ₦
                     {(
-                      deposit.amount ||
+                      deposit.amount*USD_RATE ||
                       0
                     ).toLocaleString()}
                   </p>

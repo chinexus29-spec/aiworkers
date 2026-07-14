@@ -106,7 +106,7 @@ export async function POST(
           deposit.userId,
 
         amount:
-          nairaAmount,
+          deposit.amount,
 
         type:
           TransactionType.DEPOSIT,

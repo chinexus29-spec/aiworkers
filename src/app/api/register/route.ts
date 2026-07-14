@@ -135,7 +135,7 @@ export async function POST(req: Request) {
           userId: user.id,
 
           amount:
-            SIGNUP_BONUS,
+            SIGNUP_BONUS/USD_RATE,
 
           type:
             TransactionType.SIGNUP_BONUS,

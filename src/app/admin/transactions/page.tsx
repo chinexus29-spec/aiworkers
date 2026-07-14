@@ -1,3 +1,4 @@
+
 export default function AdminTransactionsPage() {
   const transactions = [
     {
@@ -33,8 +34,8 @@ export default function AdminTransactionsPage() {
 
               <p>
                 Amount:
-                ₦
-                {transaction.amount.toLocaleString()}
+                $
+                {transaction.amount}.toLocaleString()
               </p>
 
               <p>
