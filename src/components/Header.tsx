@@ -13,16 +13,6 @@ export default function Header() {
 
     <div className="flex items-center gap-2">
       <span className="w-2 h-2 rounded-full bg-green-500"></span>
-
-      <div className="leading-tight">
-        <p className="text-[7px] text-gray-400 uppercase">
-          Your Location
-        </p>
-
-        <p className="text-blue-500 text-sm font-semibold">
-          Nigeria
-        </p>
-      </div>
     </div>
 
   </div>
