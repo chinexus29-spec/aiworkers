@@ -160,7 +160,7 @@ useEffect(() => {
         </h3>
 
         <p className="text-sm text-gray-300 leading-6">
-   🎉 We’re excited to announce that the AI Workers community has now grown to over 2,000 registered members!
+   🎉 We’re excited to announce that the AI Workers community has now grown to over 300 registered members!
 
 Thank you for being part of our journey. Your trust and support continue to inspire us as we improve the platform and introduce new opportunities. We remain committed to providing a reliable experience, timely support, and steady platform improvements for every member.
 
