@@ -156,7 +156,7 @@ useEffect(() => {
 
       <section className="card">
         <h3 className="font-semibold mb-3">
-          About AI Workers
+          Latest Announcement
         </h3>
 
         <p className="text-sm text-gray-300 leading-6">
@@ -172,7 +172,7 @@ Thank you for growing with us.
 
       <section className="card">
         <h3 className="font-semibold mb-3">
-          Latest Announcement
+          About AI Workers
         </h3>
 
         <p className="text-sm text-gray-300">

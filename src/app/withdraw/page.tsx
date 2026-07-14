@@ -77,7 +77,7 @@ const amountUsd =
 Number(amount) || 0;
 
 const feeUsd =
-amountUsd * 0.2;
+amountUsd * 0.05;
 
 const receiveUsd =
 amountUsd - feeUsd;
@@ -270,27 +270,28 @@ return (
     )}
 
     <div className="mt-4 space-y-2">
-      <div className="flex justify-between">
-        <span>
-          Withdrawal Fee (20%)
-        </span>
 
-        <span>
-          ${feeUsd.toFixed(2)}
-        </span>
-      </div>
+  <div className="flex justify-between items-center">
+    <span className="font-medium">
+      You Receive
+    </span>
 
-      <div className="flex justify-between">
-        <span>
-          You Receive
-        </span>
-
-        <span className="font-bold text-blue-500">
-          ${receiveUsd.toFixed(2)}
-        </span>
-      </div>
-    </div>
+    <span className="text-xl font-bold text-blue-500">
+      ${receiveUsd.toFixed(2)}
+    </span>
   </div>
+
+  <div className="flex justify-between items-center text-sm text-gray-400">
+    <span>
+      Withdrawal Fee (20%)
+    </span>
+
+    <span>
+      -${feeUsd.toFixed(2)}
+    </span>
+  </div>
+</div>
+</div>
 
   <button
     onClick={submit}
