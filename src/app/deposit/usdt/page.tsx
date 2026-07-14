@@ -136,7 +136,7 @@ export default function UsdtDepositPage() {
         </h2>
 
         <p className="text-sm text-gray-400 mb-2">
-          Network: TRC20
+          Network: TRON(TRC20)
         </p>
 
         <p className="text-blue-500 break-all">
