@@ -171,33 +171,8 @@ export default function UsdtDepositPage() {
         </button>
       </div>
 
-      <div className="card">
-  <h3 className="font-semibold mb-2">
-    Having trouble getting USDT?
-  </h3>
+     
 
-  <p className="text-sm text-gray-400 mb-4">
-    Contact any of our trusted agents.
-  </p>
-
-  <div className="space-y-3">
-    <a
-      href="https://wa.me/2348012345678?text=I%20am%20from%20AI%20Workers%20I%20want%20to%20purchase%20USDT"
-      target="_blank"
-      className="block text-center bg-green-600 text-white py-3 rounded-xl"
-    >
-      Agent 1
-    </a>
-
-    <a
-      href="https://wa.me/2348098765432?text=I%20am%20from%20AI%20Workers%20I%20want%20to%20purchase%20USDT"
-      target="_blank"
-      className="block text-center bg-green-600 text-white py-3 rounded-xl"
-    >
-      Agent 2
-    </a>
-  </div>
-</div>
     </main>
 
     
