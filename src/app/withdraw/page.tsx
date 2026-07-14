@@ -195,12 +195,7 @@ return (
       ).toFixed(2)}
     </p>
 
-    <p className="text-gray-500">
-      ₦
-      {(
-        user?.walletBalance || 0
-      ).toLocaleString()}
-    </p>
+    
   </div>
 
   <div className="card">

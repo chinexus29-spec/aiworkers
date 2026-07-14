@@ -120,14 +120,7 @@ export default function UsdtDepositPage() {
         />
         </div>
 
-        <p className="mt-3 text-blue-500">
-          ≈ ₦
-          {(
-            Number(
-              amount || 0
-            ) * USD_RATE
-          ).toLocaleString()}
-        </p>
+        
       </div>
 
       <div className="card">

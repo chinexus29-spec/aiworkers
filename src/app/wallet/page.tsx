@@ -45,12 +45,6 @@ export default function WalletPage() {
           ).toFixed(2)}
         </p>
 
-        <p className="text-sm text-gray-400 mt-1">
-          ≈ ₦
-          {(
-            user?.walletBalance || 0
-          ).toLocaleString()}
-        </p>
       </div>
 
       {/* Total Earnings */}
@@ -67,13 +61,7 @@ export default function WalletPage() {
             USD_RATE
           ).toFixed(2)}
         </p>
-
-        <p className="text-sm text-gray-400 mt-1">
-          ≈ ₦
-          {(
-            user?.totalEarnings || 0
-          ).toLocaleString()}
-        </p>
+        
       </div>
     </main>
     </AuthGuard>

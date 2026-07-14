@@ -25,10 +25,7 @@ export default function BalanceCard({
         ${usdBalance.toFixed(2)}
       </h2>
 
-      <p className="text-sm opacity-80 mt-1">
-        ≈ ₦
-        {balance.toLocaleString()}
-      </p>
+      
 
       <div className="mt-4 border-t border-blue-400 pt-4">
         <p className="text-sm opacity-90">
@@ -39,10 +36,7 @@ export default function BalanceCard({
           ${usdEarnings.toFixed(2)}
         </p>
 
-        <p className="text-sm opacity-80 mt-1">
-          ≈ ₦
-          {earnings.toLocaleString()}
-        </p>
+        
       </div>
     </div>
   );

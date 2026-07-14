@@ -132,12 +132,7 @@ export default function TeamPage() {
               ).toFixed(2)}
             </p>
 
-            <p className="text-xs text-gray-400 mt-1">
-              ≈ ₦
-              {(
-                user?.referralEarnings || 0
-              ).toLocaleString()}
-            </p>
+            
           </div>
         </div>
       </div>
@@ -154,8 +149,7 @@ export default function TeamPage() {
             • New users receive
             {" "}
             $1.00
-            {" "}
-            (≈ ₦1,350) signup bonus
+            {" "} signup bonus
             when registering with your
             referral code.
           </li>
