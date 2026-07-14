@@ -283,7 +283,7 @@ return (
 
   <div className="flex justify-between items-center text-sm text-gray-400">
     <span>
-      Withdrawal Fee (20%)
+      Withdrawal Fee (5%)
     </span>
 
     <span>
