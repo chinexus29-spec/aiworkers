@@ -74,8 +74,8 @@ useEffect(() => {
   </h2>
 
         <p className="mt-2 text-sm">
-          Build your portfolio of AI worker bots, earn daily rewards, and manage your investments with confidence—all from one place.
-        </p>
+          Manage your AI worker portfolio, earn daily income, and keep track of your investments all in one place.
+ </p>
       </section>
 
       {/* Balance */}
