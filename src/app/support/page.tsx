@@ -34,28 +34,7 @@ return ( <AuthGuard> <main className="page-padding space-y-5">
       </p>
     </div>
 
-    {/* WhatsApp */}
-
-    <div className="card">
-      <h2 className="font-bold text-lg mb-3">
-        WhatsApp Support
-      </h2>
-
-      <p className="text-gray-300 mb-4">
-        Contact our customer service team
-        for account, deposit and withdrawal
-        assistance.
-      </p>
-
-      <a
-        href={`https://wa.me/${2348106864592}?text=${message}`}
-        target="_blank"
-        className="cyan-btn w-full block text-center"
-      >
-        Contact Customer Service
-      </a>
-    </div>
-
+    
     {/* Help Cards */}
 
     <div className="card">
