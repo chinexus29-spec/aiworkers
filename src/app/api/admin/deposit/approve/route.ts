@@ -77,11 +77,6 @@ export async function POST(
           increment:
             nairaAmount,
         },
-
-        totalEarnings: {
-          increment:
-            nairaAmount,
-        },
       },
     });
 
