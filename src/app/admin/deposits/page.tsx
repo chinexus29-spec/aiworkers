@@ -119,7 +119,13 @@ export default function AdminDepositsPage() {
                     ).toFixed(2)}
                   </p>
 
-                  
+                  <p className="text-sm text-gray-400">
+                    ₦
+                    {(
+                      deposit.amount ||
+                      0
+                    ).toLocaleString()}
+                  </p>
                 </div>
 
                 <div>
